@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.active {
+  color: aqua;
+}
+.active,
+.nav-link {
+  position: relative;
+  padding: 10px 0;
+}
+.active::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0px;
+  height: 2px;
+  background-color: black;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 0.4s;
+}
+li:hover .active::after,
+li:hover .nav-link::after {
+  width: 100%;
+}
